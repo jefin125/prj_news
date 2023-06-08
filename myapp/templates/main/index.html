@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  {% load static %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.3/dist/jquery.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <title>News App</title>
+</head>
+<body>
+<div class="navbar fixed-top navbar-dark bg-dark">
+  <div class="container">
+    <h4 style="color:rgb(255,255,255)">News App <h4 style="color:rgb(154,255,0);">DJANGO FRAMEWORK</h4> 
+    </h4>
+    <img src="{% static 'images/logo.png' %}" class="image" style="width:90px;">
+  </div>
+</div>
+
+<div class="jumbotron"  style="text-align:center; margin-top:40px" >
+  <h2>Latest News using <a href="http" style="text-decoration:none";>news API</a></h2>
+  <img src="{% static 'images/bn-1.jpg' %}" class="image" style="width:150px; margin-bottom:-50px;" >
+</div>
+
+<div class="container">
+  {% for h1, des , img in mylist %}
+  <div class="card border-primary mb-3">
+    <img src="{{ img }}" alt="image">
+  </div>
+  <div class="card border-primary mb-3">
+    <h4><span class="badge badge-primary">Headlines:</span></h4>
+    <h5>{{ h1 }} {{value|linebreaks }}</h5>
+    <h4><span class="badge badge-success">Description:</span></h4>
+    <h5>{{ des }} {{value|linebreaks }}</h5>
+  </div>
+  {% endfor %}
+</div>
+
+</body>
+</html>
